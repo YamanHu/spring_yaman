@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring Oscillation Simulation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #e0e7ff, #f4f4f9);
+            color: #333;
+            overflow: hidden;
+        }
+
+        .container {
+            max-width: 900px;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .spring-image {
+            width: 150px;
+            height: auto;
+            margin-right: 20px;
+        }
+
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .content h1 {
+            font-size: 26px;
+            color: #0077cc;
+            margin-bottom: 10px;
+        }
+
+        .content p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #444;
+        }
+
+        .result {
+            font-weight: bold;
+            color: #0077cc;
+            font-size: 20px;
+            padding: 10px;
+            border: 1px solid #0077cc;
+            border-radius: 8px;
+            background-color: #e7f3ff;
+        }
+
+        button {
+            padding: 12px 24px;
+            font-size: 18px;
+            color: #fff;
+            background-color: #0077cc;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #005bb5;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 16px;
+            color: #555;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .footer-content {
+            color: #0077cc;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="./Spring-Mass-System.png" alt="Spring Image" class="spring-image">
+        <div class="content">
+            <h1>Spring Oscillation Simulation</h1>
+            <p>Given: <strong>u(t) = 4cos(2t)</strong>, where <em>u(t)</em> is the displacement of a mass on a spring after <em>t</em> seconds.</p>
+            <p>We want to calculate the maximum speed of the mass and find the times <em>t</em> at which this occurs.</p>
+            <button onclick="calculateMaxSpeed()">Calculate Maximum Speed</button>
+            <p class="result" id="result"></p>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-content">
+            Student: Mohamad Yaman | Teacher: Mr. Achraf | Grade: 12(5) Adv
+        </div>
+    </footer>
+    <script>
+        function calculateMaxSpeed() {
+            const maxSpeed = 8; // Maximum speed derived from |v(t)| max value
+            const time1 = "t = π/4 + nπ"; 
+            const time2 = "t = 3π/4 + nπ";
+
+            document.getElementById("result").innerHTML = `
+                Maximum Speed: ${maxSpeed} units<br>
+                Values of t where maximum speed occurs:<br>
+                1. ${time1}<br>
+                2. ${time2}
+            `;
+        }
+    </script>
+</body>
+</html>
